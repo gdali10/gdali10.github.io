@@ -1,0 +1,52 @@
+.header {
+    margin-bottom: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    color: rgb(255,255,255);
+    background: rgb(0,0,128);
+    margin: 15px;
+  }
+.header img {
+    display: block;
+    height: 60px;
+    padding-top: 20.15px;
+    position: absolute;
+    right: 0px;
+    padding: 10px;
+  }
+  
+.wrapper {
+    width: 960px;
+    margin: auto;
+    display: flex;   
+    align-self:auto ;
+    padding: 10px;
+  }
+
+.Left{
+  flex: 33%;
+  width: 300%;
+}
+.Objective {
+  /*width:0.33;*/
+  background-color: rgb(255,255,255) ;
+  width: 300px;
+}
+
+.Picture{
+  width: 300px;
+}
+
+
+
+.Experience{
+  background: rgb(255,255,255);
+  flex: 66%;
+  width: 500px;
+  height: 500px;
+}
+
+body {
+  background: burlywood;
+}
