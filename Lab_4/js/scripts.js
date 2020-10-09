@@ -1,9 +1,23 @@
 let myFullName = "Bill Farmer"; // 10 characters in name...not including space
 // 1 Change the content of the div with class "header" to "[Your name]'s Lab 4"
+//document.getElementsByClassName("header")[0].innerHTML="Gauravs Lab 4";
+
+document.querySelector(".header").innerHTML="Gaurav's Lab 4";
 
 // 2 Insert two paragraphs into the div with the class "content"
 //  Label each paragraph with a distinct class name
+document.querySelector(".content").innerHTML="My name has 10 characters.";
 
+
+
+
+
+var para = document.createElement("p");
+var node = document.createTextNode("New");
+para.appendChild(node);
+
+var element = document.getElementById("div1");
+element.appendChild(para);
 
 // 3 Into the first paragraph, insert the phrase "my name has " length of your name " characters"
 //      (e.g. my name has 10 characters).
