@@ -16,10 +16,9 @@ myContent.appendChild(mySecondP);
 
 // 3 Into the first paragraph, insert the phrase "my name has " length of your name " characters"
 //      (e.g. my name has 10 characters).
-myFirstP.textContent= 'My name has 11 characters.'
+myFirstP.textContent= 'My name has 11 characters.';
 
 // 4 & 5 Into the second paragraph tag, return the 3rd character in your first name
-//mySecondP.textContent= 'Gaurav Dali';
 let str = 'Gaurav Dali';
 let res = str.charAt(2);
 mySecondP.textContent = res.toUpperCase();
