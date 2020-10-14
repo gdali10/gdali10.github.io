@@ -492,20 +492,21 @@ const countries = [
   
   ];
   
-//console.log("List of countries in the world", countries);
-const listOfCountries = [];
-const listOfCountriesContainer = document.createElement("div");
-const listOfCountriesElement = document.createElement("ol");
+console.log("List of countries in the world", countries);
+//let listOfCountries = [];
+let listOfCountriesContainer = document.createElement("div");
+let listOfCountriesElement = document.createElement("ol");
 
-const count = listOfCountries.length;
-const listOfItem;
-const randomNumber;
-var x,y1, y2, z1,z2;
+let countCountry = countries.length;
+let listOfItem;
+let randomNumber;
+let x,y1, y2, z1,z2;
 
-listOfCountriesElement.className = "countries";
+//3. Give your ordered list the class "countries"
+listOfCountriesElement.className = "country";
 
-const btn = document.querySelector('button');
-function getRandomCountryNames()
+const countryBtn = document.querySelector('button');
+countryBtn.onclick = function getRandomCountryNames()
 {
     document.querySelector(".content").appendChild(listOfCountriesContainer);
     listOfCountriesContainer.appendChild(listOfCountriesElement);
@@ -514,8 +515,8 @@ function getRandomCountryNames()
         randomNumber = Math.floor(Math.random() *countries.length);
 
         //Create a string that holds random country's name
-        y1= document.createElement("p1");
-        y2= document.createTextNode(countries[randNum] );
+        y1= document.createElement("p");
+        y2= document.createTextNode(countries[randomNumber] );
         y1.appendChild(y2);
         y1.className = "CountryInfo";
         //Create a list that holds the string
@@ -533,6 +534,7 @@ for(x=0;x<listOfCountriesElement.length;x++)
 
     }
 }
+//btn.onclick = function getRandomCountryNames
 /*const myContent = document.querySelector(".content");
 document.querySelector(".header").innerHTML= isoCountries;
 
