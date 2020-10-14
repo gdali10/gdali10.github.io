@@ -493,17 +493,29 @@ const countries = [
   ];
   
 console.log("List of countries in the world", countries);
-//let listOfCountries = [];
+let listOfCountries = [];
 let listOfCountriesContainer = document.createElement("div");
 let listOfCountriesElement = document.createElement("ol");
 
-let countCountry = countries.length;
+let countCountry = listOfCountries.length;
 let listOfItem;
 let randomNumber;
-let x,y1, y2, z1,z2;
+let x, elementVar, textNodeVar;
 
 //3. Give your ordered list the class "countries"
 listOfCountriesElement.className = "country";
+//btn.onclick = function getRandomCountryNames
+/*const myContent = document.querySelector(".content");
+document.querySelector(".header").innerHTML= isoCountries;
+
+
+/*function getCountryName (countryCode) {
+    if (isoCountries.hasOwnProperty(countryCode)) {
+        return isoCountries[countryCode];
+    } else {
+        return countryCode;
+    }
+}*/
 
 const countryBtn = document.querySelector('button');
 countryBtn.onclick = function getRandomCountryNames()
@@ -515,26 +527,14 @@ countryBtn.onclick = function getRandomCountryNames()
         randomNumber = Math.floor(Math.random() *countries.length);
 
         //Create a string that holds random country's name
-        y1= document.createElement("p");
-        y2= document.createTextNode(countries[randomNumber] );
-        y1.appendChild(y2);
-        y1.className = "CountryInfo";
+        elementVar= document.createElement("p");
+        textNodeVar= document.createTextNode(countries[randomNumber] );
+        elementVar.appendChild(textNodeVar);
+        elementVar.className = "CountryInfo";
         //Create a list that holds the string
         listOfItem = document.createElement("li");
-        listOfItem.appendChild(y1);
-
-        listOfCountriesElement.appendChild(listOfItem);
-    }
-}
-  
-for(x=0;x<listOfCountriesElement.length;x++)
-{
-    if (countries[x] != listOfCountriesElement[x]){
-        console.log(countries[x]);
-
-    }
-}
-//btn.onclick = function getRandomCountryNames
+        listOfItem.appendChild(elementVar);
+        //btn.onclick = function getRandomCountryNames
 /*const myContent = document.querySelector(".content");
 document.querySelector(".header").innerHTML= isoCountries;
 
@@ -553,3 +553,15 @@ btn.onclick = function(){
     console.log(random)
 }
 findRandom() */
+
+        listOfCountriesElement.appendChild(listOfItem);
+    }
+}
+  
+for(x=0;x<listOfCountriesElement.length;x++)
+{
+    if (countries[x] != listOfCountriesElement[x]){
+        console.log(countries[x]);
+
+    }
+}
