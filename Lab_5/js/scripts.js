@@ -528,7 +528,9 @@ countryBtn.onclick = function getRandomCountryNames()
 
         //Create a string that holds random country's name
         elementVar= document.createElement("p");
-        textNodeVar= document.createTextNode(countries[randomNumber] );
+        textNodeVar= document.createTextNode(countries[randomNumber].name);
+        textNodeVar1= document.createTextNode(countries[randomNumber].code);
+
         elementVar.appendChild(textNodeVar);
         elementVar.className = "CountryInfo";
         //Create a list that holds the string
