@@ -1,6 +1,7 @@
 
 
 /* N.B. - For your lab, use the variable "countries" now available on the window space */
+document.querySelector(".header").innerHTML="Gaurav's Lab 4.";
 
 const countries = [
 
@@ -504,19 +505,6 @@ let x, elementVar, textNodeVar;
 
 //3. Give your ordered list the class "countries"
 listOfCountriesElement.className = "country";
-//btn.onclick = function getRandomCountryNames
-/*const myContent = document.querySelector(".content");
-document.querySelector(".header").innerHTML= isoCountries;
-
-
-/*function getCountryName (countryCode) {
-    if (isoCountries.hasOwnProperty(countryCode)) {
-        return isoCountries[countryCode];
-    } else {
-        return countryCode;
-    }
-}*/
-
 const countryBtn = document.querySelector('button');
 countryBtn.onclick = function getRandomCountryNames()
 {
@@ -526,36 +514,13 @@ countryBtn.onclick = function getRandomCountryNames()
     {
         randomNumber = Math.floor(Math.random() *countries.length);
 
-        //Create a string that holds random country's name
         elementVar= document.createElement("p");
-        textNodeVar= document.createTextNode(countries[randomNumber].name);
-        textNodeVar1= document.createTextNode(countries[randomNumber].code);
+        elementVar.innerHTML=countries[randomNumber].name + " " + "<strong>"+countries[randomNumber].code+"<strong>";
 
-        elementVar.appendChild(textNodeVar);
         elementVar.className = "CountryInfo";
         //Create a list that holds the string
         listOfItem = document.createElement("li");
         listOfItem.appendChild(elementVar);
-        //btn.onclick = function getRandomCountryNames
-/*const myContent = document.querySelector(".content");
-document.querySelector(".header").innerHTML= isoCountries;
-
-
-/*function getCountryName (countryCode) {
-    if (isoCountries.hasOwnProperty(countryCode)) {
-        return isoCountries[countryCode];
-    } else {
-        return countryCode;
-    }
-}
-
-const btn = document.querySelector('button');
-btn.onclick = function(){
-    Math.floor(Math.random()*max)
-    console.log(random)
-}
-findRandom() */
-
         listOfCountriesElement.appendChild(listOfItem);
     }
 }
