@@ -1,6 +1,5 @@
 let myFullName = "Bill Farmer"; // 10 characters in name...not including space
 // 1 Change the content of the div with class "header" to "[Your name]'s Lab 4"
-document.querySelector(".header").innerHTML="Gaurav's Lab 4.";
 
 // 2 Insert two paragraphs into the div with the class "content"
 //  Label each paragraph with a distinct class name
