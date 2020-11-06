@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bus Route API</title>
+    <script defer src="js/fetchAPIexample.js"></script>
+  </head>
+  <body>
+    <h1>UMD Bus Routes</h1>
+    <label for="busroute">Bus Route ID:</label>
+    <input type="text" id="busroute" name="busroute" /><br /><br />
+    <button onclick="getBusRoute()">Get Info</button><br /><br />
+
+    <div id="main"></div>
+    <br /><br />
+    Bus route numbers can be found
+    <a href="https://transportation.umd.edu/shuttle-um">here</a> Samples : 111,
+    115, 141, 142
+  </body>
+</html>
+<!-- Based on https://medium.com/@armando_amador/how-to-make-http-requests-using-fetch-api-and-promises-b0ca7370a444 -->
