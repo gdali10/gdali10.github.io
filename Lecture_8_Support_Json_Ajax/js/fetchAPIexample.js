@@ -1,10 +1,8 @@
-// Promise FetchAPI
-// const fetchPromise = fetch("https://api.umd.io/v0/bus/routes/115/locations");
-// Target main element
 const main = document.getElementById("main");
 
 function getBusRoute() {
   let busRoute = document.getElementById("busroute").value;
+  
   if ((typeof busRoute !== "undefined") & (busRoute !== "")) {
     console.log(busRoute);
     let busURL = "https://api.umd.io/v0/bus/routes/" + busRoute;
