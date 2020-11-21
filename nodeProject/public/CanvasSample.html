@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Canvas Sample</title>
+    <script defer src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+          var chart = new CanvasJS.Chart("chartContainer", {            
+            title:{
+              text: "Fruits sold in First & Second Quarter"              
+            },
+      
+            data: [  //array of dataSeries     
+            { //dataSeries - first quarter
+         /*** Change type "column" to "bar", "area", "line" or "pie"***/        
+             type: "column",
+             name: "First Quarter",
+             dataPoints: [
+             { label: "banana", y: 58 },
+             { label: "orange", y: 69 },
+             { label: "apple", y: 80 },                                    
+             { label: "mango", y: 74 },
+             { label: "grape", y: 64 }
+             ]
+           },
+           { //dataSeries - second quarter
+      
+            type: "column",
+            name: "Second Quarter",                
+            dataPoints: [
+            { label: "banana", y: 63 },
+            { label: "orange", y: 73 },
+            { label: "apple", y: 88 },                                    
+            { label: "mango", y: 77 },
+            { label: "grape", y: 60 }
+            ]
+          }
+          ]
+        });
+      
+          chart.render();
+        }
+        </script>
+</head>
+<body>
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>   
+    <br>
+    From : <a href="https://canvasjs.com/docs/charts/basics-of-creating-html5-chart/">Canvas</a>
+</body>
+</html>
+<!-- From https://canvasjs.com/docs/charts/basics-of-creating-html5-chart/ -->
