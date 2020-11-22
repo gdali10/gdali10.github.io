@@ -2,7 +2,6 @@
 let url = "https://www.reddit.com/r/popular.json";
 let chart = "";
 console.log(url);
-//const fetchPromise = fetch(url);
 
 let settings = { method: "Get" };
 let chartValues = [];
@@ -24,10 +23,9 @@ async function getData() {
                 */
     
 
-                /*.......*/
                 
                 let addToChart = {'label':author,y:ups}; // Gave this. This needs to be added to the 'chartValues'
-                /*.......*/
+            
             }
         })
         .then(values => console.log(chartValues));
