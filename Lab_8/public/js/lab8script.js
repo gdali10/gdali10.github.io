@@ -1,4 +1,3 @@
-
 let url = "https://www.reddit.com/r/popular.json";
 let chart = "";
 console.log(url);
@@ -7,7 +6,6 @@ console.log(url);
 let settings = { method: "Get" };
 let chartValues = [];
 
-
 async function getData() {
     await fetch(url, settings)
         .then(res => res.json())
@@ -15,34 +13,31 @@ async function getData() {
             let listSize = json.data.children.length;
             // Loop to pick 5 random entries
             for (x = 0; x < 5; x++) {
-                //Get a random number within the size of the list
+                let randNum = Math.floor(Math.random() * listSize);     //Get a random number within the size of the list
 
-
-                let randData = Math.floor(Math.random()*listSize);
-                let subreddit = json.data.children[randData].data.subreddit;
-                let author = json.data.children[randData].data.author;
-                let title = json.data.children[randData].data.title;
-                let ups = json.data.children[randData].data.ups;
-
+                let iData = json.data.children[randNum].data;
+                let subreddit = iData.subreddit;
+                let author = iData.author;
+                let title = iData.title;
+                let ups = iData.ups;
                 let message = "<b>Subreddit </b>: " + subreddit + " <b>Author</b>:" + author + " <b>Title</b>:" + title + " <b>Up votes</b>: " + ups;
-                document.getElementById("redditlist").innerHTML += message;
-                console.log(subreddit, " ", author, " ", title, " ", ups);
                 /*
+                    Get a random number within the size of the list
                     Get subreddit, author, title, and ups from record
                     Set the message to be:
                         let message = "<b>Subreddit </b>: " + subreddit + " <b>Author</b>:" + author + " <b>Title</b>:" + title + " <b>Up votes</b>: " + ups;
-                    Add a new <li> element with the message to the 'redditList' element
+                    
                     Add a data entry to chartValues with author as the label and ups as the y component
                 */
-                let select = document.getElementById("redditlist");
-                select.innerHTML += "<li>" + message + "</li>";
-    //////////////////////////////////////////////////////////////////////
-
+               //adding info to the index.html file
+                let item = document.createElement("li");                      //Add a new <li> element with the message to the 'redditList' element
+                item.innerHTML= (message);
+                document.getElementById("redditList").append(item);
                 /*.......*/
                 
                 let addToChart = {'label':author,y:ups}; // Gave this. This needs to be added to the 'chartValues'
-                /*.......*/
                 chartValues.push(addToChart);
+                /*.......*/
             }
         })
         .then(values => console.log(chartValues));
@@ -65,7 +60,7 @@ window.onload = async function makeChart() {
         ]
     });
     
-    chart.render();
+    //chart.render();
 }
 
 //window.onload = makeChart();
