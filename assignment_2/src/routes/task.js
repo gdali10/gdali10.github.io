@@ -3,6 +3,21 @@ let router = express.Router()
 let db = require('../database');
 
 // Create a new task
+router.get('/allTasks', (req, res) => {
+
+    console.log("Get all tasks");
+    let sql = "select * from tasks";
+    db.all(sql, (err, row) => {
+      if (err) {
+        res.status(400).json({ "error": err.message });
+        return;
+      }
+      res.json({
+        "message": "success",
+        "data": row
+      })
+    });
+  })
 // POST localhost:<port>/task
 router.post('/task', (req, res) => {
     // now we have access to req.body due to body-parser (see index.js)
