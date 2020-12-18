@@ -393,3 +393,40 @@ function submitNewGroup() {
 
 }
 
+let url = "/allTasks"
+const tasks = [];
+
+fetch(url)
+    .then(blob => blob.json())
+    .then(data => tasks.push(...data.data))
+
+function findMatches(wordToMatch, tasks){
+  return tasks.filter(result => {
+    const regex = new RegExp(wordToMatch, 'gi');
+    return result.taskName.match(regex)
+
+
+  });
+}
+
+
+function displayMatches(){
+  const matchArray = findMatches(this.value, tasks);
+  const html = matchArray.map(result =>{
+  const regex = new RegExp(this.value, 'gi');
+   const task = result.taskName.replace(regex, `<span class="highlight">${this.value}</span>`);
+  return `
+      <dt>
+          <span class="result">${task}</span>
+        </dt>
+       `;
+     }).join('');
+     recommendations.innerHTML = html;
+
+    }
+
+const searchResult = document.getElementById('searchTask');
+const recommendations = document.querySelector('.recommendations');
+searchResult.addEventListener('change', displayMatches);
+searchResult.addEventListener('keyup', displayMatches);
+
